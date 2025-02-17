@@ -12,10 +12,10 @@ class Media extends Model
 
     public function recipe()
     {
-        return $this->belongsTo(Recipe::class);
+        return $this->belongsTo(Recipe::class, 'id_recipe');
     }
     public function post()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Post::class, 'id_post');
     }
 }

@@ -9,10 +9,12 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $table = 'category';
 
-    public function recipe()
+
+    public function recipes()
     {
-        return $this->hasMany(Recipe::class);
+        return $this->hasMany(Recipe::class, 'id_category');
     }
     
 }

@@ -18,11 +18,11 @@
     <div class="container mx-auto px-4 py-16">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Recipes Card -->
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+            <a href="/recipes" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
                 <div class="text-emerald-900 text-4xl mb-4">🍽️</div>
                 <h3 class="text-xl font-bold mb-2">Recettes</h3>
                 <p class="text-gray-600">Découvrez et partagez des recettes traditionnelles pour l'iftar et le suhoor.</p>
-            </div>
+            </a>
 
             <!-- Experiences Card -->
             <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
