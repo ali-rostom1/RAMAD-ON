@@ -9,7 +9,7 @@
                     <a href="/conseils" class="hover:text-emerald-200 transition">Conseils</a>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="#" class="bg-emerald-700 hover:bg-emerald-600 px-4 py-2 rounded-lg transition">Connexion</a>
+                    <a href="/login" class="bg-emerald-700 hover:bg-emerald-600 px-4 py-2 rounded-lg transition">Connexion</a>
                 </div>
             </div>
         </div>
