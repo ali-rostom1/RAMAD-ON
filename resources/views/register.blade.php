@@ -41,6 +41,16 @@
                         <h2 class="text-3xl font-bold text-amber-900">Inscription</h2>
                         <p class="mt-2 text-gray-600">Créez votre compte en quelques étapes</p>
                     </div>
+                @if ($errors->any())
+                    <div class="text-red-500">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
 
                     <form class="space-y-6" action="{{route('register.store')}}" method="POST">
                         @csrf
