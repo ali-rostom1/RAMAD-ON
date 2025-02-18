@@ -15,9 +15,7 @@ class LoginController extends Controller
     }
     public function store(LoginRequest $request)
     {
-        dd(Auth::check());
         if(Auth::attempt($request->validated())){
-            $request->session()->regenerate();
             return redirect("/");
         }
         return back()

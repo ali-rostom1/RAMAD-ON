@@ -16,7 +16,13 @@ class RegisterController extends Controller
     }
     public function store(RegisterRequest $request)
     {
-        User::create($request->validated());
-        return redirect("/");
+        try{
+            User::create($request->validated());
+            return redirect('/')->with('success', 'Registration successful!');
+        }catch(\Illuminate\Validation\ValidationException $e){
+            return redirect()->back()->withErrors($e->errors())->withInput();
+        }catch(\Exception $e){
+            return redirect()->back()->with('error','Registration Failed !');            
+        }
     }
 }
