@@ -8,9 +8,17 @@
                     <a href="/posts" class="hover:text-emerald-200 transition">Expériences</a>
                     <a href="/conseils" class="hover:text-emerald-200 transition">Conseils</a>
                 </div>
+                @guest
                 <div class="flex items-center space-x-4">
                     <a href="/login" class="bg-emerald-700 hover:bg-emerald-600 px-4 py-2 rounded-lg transition">Connexion</a>
                 </div>
+                @endguest
+                @auth
+                <div class="flex items-center space-x-4">
+                    @csrf
+                    <a href="{{route('logout')}}" class="bg-emerald-700 hover:bg-emerald-600 px-4 py-2 rounded-lg transition">Logout</a>
+                </div>
+                @endauth
             </div>
         </div>
 </nav>

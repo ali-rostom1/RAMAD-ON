@@ -16,5 +16,5 @@ class Category extends Model
     {
         return $this->hasMany(Recipe::class, 'id_category');
     }
-    
+
 }

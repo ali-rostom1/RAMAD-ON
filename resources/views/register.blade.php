@@ -42,7 +42,7 @@
                         <p class="mt-2 text-gray-600">Créez votre compte en quelques étapes</p>
                     </div>
 
-                    <form class="space-y-6" action="#" method="POST">
+                    <form class="space-y-6" action="{{route('register.store')}}" method="POST">
                         @csrf
                         <!-- Name -->
                         <div>

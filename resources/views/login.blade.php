@@ -42,7 +42,7 @@
                         <p class="mt-2 text-gray-600">Heureux de vous revoir !</p>
                     </div>
 
-                    <form class="space-y-6" action="#" method="POST">
+                    <form class="space-y-6" action="{{route("login.store")}}" method="POST">
                         @csrf
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
