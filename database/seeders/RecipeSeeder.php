@@ -15,6 +15,7 @@ class RecipeSeeder extends Seeder
     {
         DB::table('recipe')->insert([
             [
+                'name' => 'soupe marocaine',
                 'textContent' => 'Une soupe marocaine traditionnelle parfaite pour l\'iftar, riche en légumes et en légumineuses.',
                 'imagePath' => '/api/placeholder/400/300',
                 'id_user' => 1, 
@@ -23,6 +24,7 @@ class RecipeSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'name' => 'crepes',
                 'textContent' => 'Crêpes feuilletées marocaines servies avec du miel et du beurre fondu.',
                 'imagePath' => '/api/placeholder/400/300',
                 'id_user' => 1, 
@@ -31,6 +33,7 @@ class RecipeSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'name' => 'boisson energitique',
                 'textContent' => 'Boisson rafraîchissante et énergétique pour le suhoor, préparée avec des dattes fraîches.',
                 'imagePath' => '/api/placeholder/400/300',
                 'id_user' => 1, 
