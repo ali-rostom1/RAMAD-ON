@@ -9,7 +9,7 @@ class Comment extends Model
 {
     use HasFactory;
 
-    
+    protected $table = "comment";
 
     public function user()
     {
