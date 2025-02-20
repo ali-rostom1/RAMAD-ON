@@ -20,11 +20,10 @@
             </div>
         </div>
         <div class="flex flex-wrap gap-4">
-            <button class="px-6 py-2 bg-amber-900 text-white rounded-full hover:bg-amber-800 transition">Tous</button>
-            <button class="px-6 py-2 bg-white text-amber-900 border border-amber-900 rounded-full hover:bg-amber-50 transition">Entrées</button>
-            <button class="px-6 py-2 bg-white text-amber-900 border border-amber-900 rounded-full hover:bg-amber-50 transition">Plats Principaux</button>
-            <button class="px-6 py-2 bg-white text-amber-900 border border-amber-900 rounded-full hover:bg-amber-50 transition">Desserts</button>
-            <button class="px-6 py-2 bg-white text-amber-900 border border-amber-900 rounded-full hover:bg-amber-50 transition">Boissons</button>
+            <a href="{{route('recipes')}}" class="px-6 py-2 bg-amber-900 text-white rounded-full hover:bg-amber-800 transition">Tous</a>
+            @foreach ($categories as $category)
+                <a href="/recipes/category/{{$category->id}}" class="px-6 py-2 bg-white text-amber-900 border border-amber-900 rounded-full hover:bg-amber-50 transition">{{$category->name}}</a>
+            @endforeach
         </div>
     </div>
 
@@ -53,10 +52,9 @@
         </div>
         @endforeach
     </div>
-    {{ $recipes->links()}}
     <!-- Pagination -->
-    <div class="mt-8 flex justify-center">
-        
+    <div class="mt-8 ">
+        {{ $recipes->links()}}
         {{-- <nav class="flex items-center space-x-2">
             <button class="px-4 py-2 border border-amber-900 text-amber-900 rounded-md hover:bg-amber-50">Précédent</button>
             <button class="px-4 py-2 bg-amber-900 text-white rounded-md">1</button>

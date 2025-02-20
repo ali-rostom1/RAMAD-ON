@@ -10,17 +10,20 @@ use App\Models\Recipe;
 use App\Models\Media;
 use App\Models\Post;
 
-Route::get('/register', [RegisterController::class, 'create'])->name('register');
-Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
-Route::get('/login', [LoginController::class, 'create'])->name("login");
-Route::post('/login', [LoginController::class, 'store'])->name("login.store");
-
+Route::middleware("guest")->group(function(){
+    Route::get('/register', [RegisterController::class, 'create'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+    
+    Route::get('/login', [LoginController::class, 'create'])->name("login");
+    Route::post('/login', [LoginController::class, 'store'])->name("login.store");
+});
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return view('home');
     });
     Route::get('/recipes',[RecipeController::class,'create'])->name('recipes');
+    Route::get('/recipes/category/{category}',[RecipeController::class,'create',])->name('recipes');
     Route::get('/debug-posts', function () {
         $posts = Post::all();
         return response()->json($posts);
